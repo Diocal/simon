@@ -1,0 +1,34 @@
+const TelegramBot = require('node-telegram-bot-api');
+const express = require('express');
+const bodyParser = require('body-parser');
+
+// Incluye directamente tu token para pruebas
+const token = '7748403241:AAHgfohtZl40xuEtwBF9W-hTWWXPiTYbAkM';
+
+if (!token) {
+  throw new Error("El token de Telegram no está definido.");
+}
+
+// Crear una instancia del bot de Telegram
+const bot = new TelegramBot(token);
+
+// Crear una aplicación Express para manejar el webhook
+const app = express();
+app.use(bodyParser.json());  // Usar body-parser para procesar JSON
+
+// Configurar el webhook para Telegram con la URL de Vercel
+bot.setWebHook(`https://<tu-url-publica>.vercel.app/bot${token}`);
+
+// Ruta para recibir las actualizaciones desde Telegram
+app.post(`/bot${token}`, (req, res) => {
+  bot.processUpdate(req.body);  // Procesar la actualización
+  res.sendStatus(200);  // Responder a Telegram que todo fue bien
+});
+
+// Ruta raíz para verificar que el bot esté funcionando
+app.get('/', (req, res) => {
+  res.send('¡Bot de Telegram funcionando en Vercel!');
+});
+
+// Iniciar el servidor en Vercel (Vercel lo maneja automáticamente)
+module.exports = app;
