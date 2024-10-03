@@ -17,7 +17,7 @@ const app = express();
 app.use(bodyParser.json());  // Usar body-parser para procesar JSON
 
 // Configurar el webhook para Telegram con la URL de Vercel
-bot.setWebHook(`https://<tu-url-publica>.vercel.app/bot${token}`);
+bot.setWebHook(`https://simon-drab.vercel.app/bot${token}`);
 
 // Ruta para recibir las actualizaciones desde Telegram
 app.post(`/bot${token}`, (req, res) => {
