@@ -9,8 +9,8 @@ if (!token) {
   throw new Error("El token de Telegram no está definido.");
 }
 
-// Crear una instancia del bot de Telegram
-const bot = new TelegramBot(token);
+// Crear una instancia del bot de Telegram, sin usar polling (para webhooks)
+const bot = new TelegramBot(token, { polling: false });
 
 // Crear una aplicación Express para manejar el webhook
 const app = express();
@@ -28,6 +28,17 @@ app.post(`/bot${token}`, (req, res) => {
 // Ruta raíz para verificar que el bot esté funcionando
 app.get('/', (req, res) => {
   res.send('¡Bot de Telegram funcionando en Vercel!');
+});
+
+// Manejador para el comando /start
+bot.onText(/\/start/, (msg) => {
+  const chatId = msg.chat.id;
+  bot.sendMessage(chatId, "¡Bienvenido al juego de Simon! Usa los botones para comenzar.");
+});
+
+// Manejador general para todos los mensajes, para depurar
+bot.on('message', (msg) => {
+  console.log('Mensaje recibido:', msg);  // Esto te ayudará a ver qué mensajes llegan
 });
 
 // Iniciar el servidor en Vercel (Vercel lo maneja automáticamente)
