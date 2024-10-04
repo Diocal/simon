@@ -20,11 +20,9 @@ html, body, div, span, applet, object, iframe,
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-
-  /* Disable mouse selection */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  -webkit-user-select: none; /* Chrome/Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+ */
   -o-user-select: none;
   user-select: none;
 }
@@ -55,7 +53,6 @@ body {
 }
 
 .rw {
-  margin-bottom: -4px;
   display: flex;
   justify-content: space-between;
 }
