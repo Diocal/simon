@@ -17,10 +17,10 @@ const app = express();
 app.use(bodyParser.json());  // Usar body-parser para procesar JSON
 
 // Configurar el webhook para Telegram con la URL de Vercel
-bot.setWebHook(`https://simon-lyart.vercel.app/webhook`);  // Cambié esta línea para que sea más genérica
+bot.setWebHook(`https://simon-lyart.vercel.app/webhook`);
 
 // Ruta para recibir las actualizaciones desde Telegram
-app.post(`/webhook`, (req, res) => {  // Cambié esta ruta para que sea más genérica
+app.post('/webhook', (req, res) => {
   console.log("Webhook activado: ", req.body);  // Log para depuración
   bot.processUpdate(req.body);  // Procesar la actualización
   res.sendStatus(200);  // Responder a Telegram que todo fue bien
@@ -28,21 +28,27 @@ app.post(`/webhook`, (req, res) => {  // Cambié esta ruta para que sea más gen
 
 // Ruta raíz para verificar que el bot esté funcionando
 app.get('/', (req, res) => {
-  console.log('Verificación de la ruta raíz activada');  // Log para depuración
+  console.log('Verificación de la ruta raíz activada');
   res.send('¡Bot de Telegram funcionando en Vercel!');
+});
+
+// **Esta parte es clave para iniciar el servidor en el puerto 3000**
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Servidor corriendo en http://localhost:${port}`);
 });
 
 // Manejador para el comando /start
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
   console.log("/start recibido de:", chatId);  // Log para depuración
-  bot.sendMessage(chatId, "¡Bienvenido al juego de Simon! Usa los botones para comenzar.");
+  
+  // Enviar el enlace al juego Simon hospedado en Vercel como un link clicable
+  const gameUrl = 'https://simon-lyart.vercel.app/';
+  bot.sendMessage(chatId, `¡Bienvenido al juego de Simon! Haz clic en el enlace para jugar:\n\n[🎮 Juega aquí](https://simon-lyart.vercel.app/)`, { parse_mode: 'Markdown' });
 });
 
 // Manejador general para todos los mensajes, para depurar
 bot.on('message', (msg) => {
   console.log('Mensaje recibido:', msg);  // Esto te ayudará a ver qué mensajes llegan
 });
-
-// Iniciar el servidor en Vercel (Vercel lo maneja automáticamente)
-module.exports = app;
