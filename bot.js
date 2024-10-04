@@ -32,11 +32,7 @@ app.get('/', (req, res) => {
   res.send('¡Bot de Telegram funcionando en Vercel!');
 });
 
-// **Esta parte es clave para iniciar el servidor en el puerto 3000**
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
-});
+// Eliminar la parte del puerto para Vercel, ya que no es necesario especificarlo
 
 // Manejador para el comando /start
 bot.onText(/\/start/, (msg) => {
@@ -52,3 +48,5 @@ bot.onText(/\/start/, (msg) => {
 bot.on('message', (msg) => {
   console.log('Mensaje recibido:', msg);  // Esto te ayudará a ver qué mensajes llegan
 });
+
+module.exports = app;  // Exportar la aplicación para Vercel
