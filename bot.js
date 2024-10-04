@@ -21,18 +21,21 @@ bot.setWebHook(`https://simon-lyart.vercel.app/bot${token}`);
 
 // Ruta para recibir las actualizaciones desde Telegram
 app.post(`/bot${token}`, (req, res) => {
+  console.log("Webhook activado: ", req.body);  // Log para depuración
   bot.processUpdate(req.body);  // Procesar la actualización
   res.sendStatus(200);  // Responder a Telegram que todo fue bien
 });
 
 // Ruta raíz para verificar que el bot esté funcionando
 app.get('/', (req, res) => {
+  console.log('Verificación de la ruta raíz activada');  // Log para depuración
   res.send('¡Bot de Telegram funcionando en Vercel!');
 });
 
 // Manejador para el comando /start
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
+  console.log("/start recibido de:", chatId);  // Log para depuración
   bot.sendMessage(chatId, "¡Bienvenido al juego de Simon! Usa los botones para comenzar.");
 });
 
