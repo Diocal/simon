@@ -17,10 +17,10 @@ const app = express();
 app.use(bodyParser.json());  // Usar body-parser para procesar JSON
 
 // Configurar el webhook para Telegram con la URL de Vercel
-bot.setWebHook(`https://simon-lyart.vercel.app/bot${token}`);
+bot.setWebHook(`https://simon-lyart.vercel.app/webhook`);  // Cambié esta línea para que sea más genérica
 
 // Ruta para recibir las actualizaciones desde Telegram
-app.post(`/bot${token}`, (req, res) => {
+app.post(`/webhook`, (req, res) => {  // Cambié esta ruta para que sea más genérica
   console.log("Webhook activado: ", req.body);  // Log para depuración
   bot.processUpdate(req.body);  // Procesar la actualización
   res.sendStatus(200);  // Responder a Telegram que todo fue bien
