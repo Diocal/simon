@@ -29,17 +29,16 @@ html, body, div, span, applet, object, iframe,
   user-select: none;
 }
 
-html{
-  background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
+html, body {
   height: 100%;
+  background-color: #ececec;
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Para que siempre esté centrado verticalmente */
-  background-color: #ececec;
+  background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
 }
 
 .inline {
@@ -75,28 +74,29 @@ body {
 }
 
 .wrap {
-  width: 600px; /* Aumentamos el tamaño */
-  height: 600px; /* Aumentamos el tamaño */
+  width: 500px; /* Ajustamos tamaño */
+  height: 500px; /* Ajustamos tamaño */
   border-radius: 100%;
   position: relative;
   text-align: center;
   background-color: #333;
   box-shadow: 0px 0px 12px #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrap-in {
   position: relative;
-  top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .center {
-  width: 300px; /* Aumentamos el tamaño */
-  height: 300px;
-  position: absolute;
+  width: 240px; /* Ajustamos tamaño */
+  height: 240px;
   border-radius: 100%;
-  top: 50%;
-  left: 50%;
-  margin: -150px 0 0 -150px; /* Ajustamos el margen */
   background-color: #ECE7EE;
   border: 12px solid #333;
 }
@@ -256,24 +256,37 @@ body {
   background-color: #13ff7c;
 }
 
-/* Scaling for Mobile */
+/* Ajustes responsivos */
+@media screen and (max-width: 768px) {
+  .wrap {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .push {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .center {
+    width: 200px;
+    height: 200px;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .wrap {
-    top: 40px;
+    width: 320px;
+    height: 320px;
+  }
 
-    -moz-transform: scale(0.8); /* Ajuste responsivo */
-    -ms-transform: scale(0.8);
-    -o-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
+  .push {
+    width: 160px;
+    height: 160px;
+  }
 
-    -o-transform-origin: 0 0;
-    -ms-transform-origin: 0 0;
-    -webkit-transform-origin: 0 0;
-    -moz-transform-origin: 0 0;
-    transform-origin: 0 0;
-
-    left: 50%;
-    margin-left: -142px;
+  .center {
+    width: 160px;
+    height: 160px;
   }
 }
