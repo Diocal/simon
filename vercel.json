@@ -6,26 +6,26 @@
         "use": "@vercel/node"
       },
       {
-        "src": "index.html",
+        "src": "public/index.html",
         "use": "@vercel/static"
       },
       {
-        "src": "style.css",
+        "src": "public/style.css",
         "use": "@vercel/static"
       },
       {
-        "src": "script.js",
+        "src": "public/script.js",
         "use": "@vercel/static"
       }
     ],
     "routes": [
       {
         "src": "/webhook",
-        "dest": "/bot.js"
+        "dest": "/api/bot.js"
       },
       {
-        "src": "/",
-        "dest": "/index.html"
+        "src": "/(.*)",
+        "dest": "/public/index.html"
       }
     ]
   }
