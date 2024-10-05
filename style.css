@@ -249,7 +249,7 @@ html {
 /* Scaling for Mobile */
 @media screen and (max-width: 500px) {
   .wrap {
-    top: 40px;
+    top: 20vh;
 
     -moz-transform: scale(0.6);
     -ms-transform: scale(0.6);
