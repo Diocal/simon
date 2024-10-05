@@ -32,7 +32,7 @@ html, body, div, span, applet, object, iframe,
 }
 
 html {
- background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
+  background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
 }
 
 .inline {
@@ -40,7 +40,7 @@ html {
 }
 
 .push {
-  position  : relative;
+  position: relative;
   width: 200px;
   height: 200px;
   background-color: grey;
@@ -83,6 +83,7 @@ html {
   position: relative;
   top: 12px;
 }
+
 .center {
   width: 220px;
   height: 220px;
@@ -209,12 +210,15 @@ html {
 .sw-on {
   left: 20px;
 }
+
 .rw.bot {
   margin-top: 10px;
 }
+
 .full-red {
   background-color: #FC0102;
 }
+
 .red {
   background-color: #9f0f17;
 }
@@ -247,27 +251,21 @@ html {
   background-color: #13ff7c;
 }
 
-/* Scaling for Mobile */
+/* Mobile adjustments */
 @media screen and (max-width: 500px) {
   .wrap {
-    top: 0;
-    width: 100vw; /* Usamos todo el ancho de la pantalla */
-    height: 100vw; /* Hacemos que la altura sea igual al ancho */
-    margin: 0 auto; /* Centrado horizontal */
-    transform: none; /* Evitamos el escalado */
+    width: 90vw;
+    height: 90vw;
+    top: 5vh;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
   }
 
-  .wrap-in {
-    top: 0;
-    margin-top: 20px;
-  }
-  
   .center {
-    width: 80%;
-    height: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 60%;
+    margin-top: -50px;
   }
 
   .count {
@@ -277,5 +275,9 @@ html {
   .round-btn {
     width: 16px;
     height: 16px;
+  }
+
+  .wrap-in {
+    top: 20px;
   }
 }
