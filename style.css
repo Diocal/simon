@@ -21,7 +21,7 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
   box-sizing: border-box;
-  user-select: none; /* Disable mouse selection */
+  user-select: none;
 }
 
 html, body {
@@ -33,10 +33,6 @@ html, body {
   background-size: cover;
 }
 
-.inline {
-  display: inline-block;
-}
-
 .wrap {
   width: 472px;
   height: 472px;
@@ -44,12 +40,11 @@ html, body {
   background-color: #333;
   box-shadow: 0px 0px 12px #222;
   position: relative;
-  display: grid;
-  grid-template-areas:
-    "green red"
-    "yellow blue";
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .push {
@@ -57,43 +52,38 @@ html, body {
   height: 200px;
   background-color: grey;
   border: 12px solid #333;
+  margin: 10px;
 }
 
 .green {
   background-color: #00a74a;
-  grid-area: green;
   border-top-left-radius: 100%;
 }
 
 .red {
   background-color: #9f0f17;
-  grid-area: red;
   border-top-right-radius: 100%;
 }
 
 .yellow {
   background-color: #cca707;
-  grid-area: yellow;
   border-bottom-left-radius: 100%;
 }
 
 .blue {
   background-color: #094a8f;
-  grid-area: blue;
   border-bottom-right-radius: 100%;
 }
 
 .center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 220px;
   height: 220px;
-  border-radius: 100%;
   background-color: #ECE7EE;
+  border-radius: 100%;
   border: 12px solid #333;
+  position: absolute;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 10;
@@ -102,130 +92,39 @@ html, body {
 .brand {
   font-family: 'Alfa Slab One', cursive;
   color: #222;
-  font-size: 3.2em;
-  margin-top: 35px;
+  font-size: 2em;
   text-align: center;
-}
-
-.brand .small {
-  font-size: 0.3em;
-  position: relative;
-  top: -20px;
 }
 
 .count {
   font-family: 'VT323', monospace;
   color: #DC0D29;
   padding: 0px;
-  font-size: 2em;
+  font-size: 1.5em;
   width: 50px;
   background-color: #32050C;
-  position: relative;
-  border: 4px solid #222;
-  border-radius: 10px;
-  margin: auto;
+  text-align: center;
+  margin-top: 10px;
 }
 
-.round-btn {
-  width: 20px;
-  height: 20px;
-  background-color: yellow;
-  border-radius: 100%;
-  border: 4px solid #444;
-  box-shadow: 0px 2px 3px #222;
-  margin: auto;
-}
-
-.round-btn:active {
-  box-shadow: 0 1px 1px #292929;
-}
-
-.clickable {
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-.unclickable {
-  pointer-events: none;
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
 }
 
 .led {
-  width: 6px;
-  height: 6px;
   background-color: #32050C;
   border-radius: 100%;
-  margin: auto;
+  height: 8px;
+  width: 8px;
   border: 2px solid #222;
+  position: absolute;
 }
 
 .led-on {
   background-color: #DC0D29;
-}
-
-.led-off {
-  color: #430710;
-}
-
-.label {
-  color: #222;
-  font-family: 'Oswald', Arial, sans;
-  font-size: 0.7em;
-  margin-top: 5px;
-  text-align: center;
-}
-
-.display {
-  width: 60px;
-  position: relative;
-  text-align: center;
-}
-
-.btn-box {
-  width: 50px;
-  position: relative;
-}
-
-.sw-slot {
-  height: 20px;
-  width: 40px;
-  background-color: #222;
-  position: relative;
-  top: 5px;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-.switch {
-  height: 16px;
-  width: 16px;
-  border-radius: 4px;
-  background-color: #3193DE;
-  position: relative;
-  border: 2px solid #333;
-}
-
-.sw-on {
-  left: 20px;
-}
-
-.rw.bot {
-  margin-top: 10px;
-}
-
-.yellow.light {
-  background-color: #fed93f;
-}
-
-.blue.light {
-  background-color: #1c8cff;
-}
-
-.red.light {
-  background-color: #ff4c4c;
-}
-
-.green.light {
-  background-color: #13ff7c;
 }
 
 /* Mobile styles */
@@ -233,15 +132,24 @@ html, body {
   .wrap {
     width: 320px;
     height: 320px;
+    padding: 10px;
   }
 
   .push {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
   }
 
   .center {
     width: 160px;
     height: 160px;
+  }
+
+  .brand {
+    font-size: 1.5em;
+  }
+
+  .count {
+    font-size: 1.2em;
   }
 }
