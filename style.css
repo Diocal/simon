@@ -30,6 +30,7 @@ time, mark, audio, video {
 
 html {
   background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
+  height: 100%;
 }
 
 body {
@@ -43,34 +44,6 @@ body {
   display: inline-block;
 }
 
-.push {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  background-color: grey;
-  border: 12px solid #333;
-}
-
-.rw {
-  margin-bottom: -4px;
-}
-
-.b-r {
-  border-bottom-right-radius: 100%;
-}
-
-.b-l {
-  border-bottom-left-radius: 100%;
-}
-
-.t-l {
-  border-top-left-radius: 100%;
-}
-
-.t-r {
-  border-top-right-radius: 100%;
-}
-
 .wrap {
   width: 472px;
   height: 472px;
@@ -78,7 +51,6 @@ body {
   position: relative;
   text-align: center;
   background-color: #333;
-  top: 10vh;
   box-shadow: 0px 0px 12px #222;
 }
 
@@ -257,14 +229,14 @@ body {
 /* Scaling for Mobile */
 @media screen and (max-width: 500px) {
   .wrap {
-    top: 40px;
-
     -moz-transform: scale(0.8);
     -ms-transform: scale(0.8);
     -o-transform: scale(0.8);
     -webkit-transform: scale(0.8);
     transform: scale(0.8);
-    left: 50%;
-    margin-left: -142px;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: auto;
   }
 }
