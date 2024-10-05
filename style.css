@@ -22,12 +22,9 @@ time, mark, audio, video {
   vertical-align: baseline;
 
   /* Disable mouse selection */
-  -webkit-user-select: none; /* Chrome/Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+ */
-
-  /* Rules below not implemented in browsers yet */
-  -o-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -254,8 +251,8 @@ html {
 /* Scaling for Mobile */
 @media screen and (max-width: 500px) {
   .wrap {
-    top: 30%;
-    transform: translate(-50%, -30%);
+    top: 40%;
+    transform: translate(-50%, -40%);
     width: 300px;
     height: 300px;
   }
