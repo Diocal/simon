@@ -86,7 +86,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 5vh; /* Ajuste de posición */
+  margin-top: 20px; /* Ajuste adicional */
 }
 
 .wrap-in {
@@ -263,6 +263,7 @@ body {
     width: 80vw;
     height: 80vw;
     margin: 0;
+    top: 0;
   }
 
   .center {
