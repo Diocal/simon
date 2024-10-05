@@ -2,18 +2,18 @@
 
 /* Basic Reset */
 html, body, div, span, applet, object, iframe,
- h1, h2, h3, h4, h5, h6, p, blockquote, pre,
- a, abbr, acronym, address, big, cite, code,
- del, dfn, em, img, ins, kbd, q, s, samp,
- small, strike, strong, sub, sup, tt, var,
- b, u, i, center,
- dl, dt, dd, ol, ul, li,
- fieldset, form, label, legend,
- table, caption, tbody, tfoot, thead, tr, th, td,
- article, aside, canvas, details, embed,
- figure, figcaption, footer, header, hgroup,
- menu, nav, output, ruby, section, summary,
- time, mark, audio, video {
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -32,14 +32,14 @@ html, body, div, span, applet, object, iframe,
 }
 
 html {
- background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
+  background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
 }
 .inline {
   display: inline-block;
 }
 
 .push {
-  position  : relative;
+  position: relative;
   width: 200px;
   height: 200px;
   background-color: grey;
@@ -70,11 +70,12 @@ html {
   width: 472px;
   height: 472px;
   border-radius: 100%;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  margin: auto;
   background-color: #333;
-  top: 10vh;
   box-shadow: 0px 0px 12px #222;
 }
 
@@ -82,6 +83,7 @@ html {
   position: relative;
   top: 12px;
 }
+
 .center {
   width: 220px;
   height: 220px;
@@ -208,12 +210,15 @@ html {
 .sw-on {
   left: 20px;
 }
+
 .rw.bot {
   margin-top: 10px;
 }
+
 .full-red {
   background-color: #FC0102;
 }
+
 .red {
   background-color: #9f0f17;
 }
@@ -250,19 +255,16 @@ html {
 @media screen and (max-width: 500px) {
   .wrap {
     top: 40px;
-
     -moz-transform: scale(0.6);
     -ms-transform: scale(0.6);
     -o-transform: scale(0.6);
     -webkit-transform: scale(0.6);
     transform: scale(0.6);
-
     -o-transform-origin: 0 0;
     -ms-transform-origin: 0 0;
     -webkit-transform-origin: 0 0;
     -moz-transform-origin: 0 0;
     transform-origin: 0 0;
-
     left: 50%;
     margin-left: -142px;
   }
