@@ -256,7 +256,7 @@ html {
   .wrap {
     width: 90vw;
     height: 90vw;
-    top: 5vh;
+    top: 10vh;
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
