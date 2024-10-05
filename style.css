@@ -67,8 +67,8 @@ html {
 }
 
 .wrap {
-  width: 472px;
-  height: 472px;
+  width: 502px;
+  height: 502px;
   border-radius: 100%;
   position: relative;
   text-align: center;
@@ -83,8 +83,8 @@ html {
   top: 12px;
 }
 .center {
-  width: 400px;
-  height: 400px;
+  width: 220px;
+  height: 220px;
   position: absolute;
   border-radius: 100%;
   top: 50%;
