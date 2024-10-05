@@ -21,10 +21,10 @@
     "routes": [
       {
         "src": "/webhook",
-        "dest": "/api/bot.js"
+        "dest": "/bot.js"
       },
       {
-        "src": "/(.*)",
+        "src": "/",
         "dest": "/public/index.html"
       }
     ]
