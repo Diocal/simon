@@ -1,37 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|VT323|Oswald');
 
-/* Basic Reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* Reset básico */
+html, body {
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* Disable mouse selection */
-* {
-  -webkit-user-select: none; /* Chrome/Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+ */
-  user-select: none;
-}
-
-html {
-  background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
   height: 100%;
 }
 
@@ -39,27 +11,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
+  background-size: cover;
 }
 
+/* Contenedor principal del juego */
 .wrap {
   width: 472px;
   height: 472px;
-  border-radius: 100%;
+  border-radius: 50%;
   position: relative;
-  text-align: center;
   background-color: #333;
   box-shadow: 0px 0px 12px #222;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
 }
 
 .center {
   width: 220px;
   height: 220px;
   position: relative;
-  border-radius: 100%;
+  border-radius: 50%;
   background-color: #ECE7EE;
   border: 12px solid #333;
   display: flex;
@@ -69,8 +43,10 @@ body {
 
 .brand {
   font-family: 'Alfa Slab One', cursive;
-  color: #222;
   font-size: 3.2em;
+  color: #222;
+  position: absolute;
+  top: 20px;
 }
 
 .count {
@@ -87,30 +63,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  bottom: 20px;
 }
 
 .round-btn {
   width: 20px;
   height: 20px;
   background-color: yellow;
-  border-radius: 100%;
+  border-radius: 50%;
   border: 4px solid #444;
   box-shadow: 0px 2px 3px #222;
   margin: 5px;
 }
 
-.led {
-  width: 6px;
-  height: 6px;
-  background-color: #DC0D29;
-  border-radius: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  border: 2px solid #222;
-}
-
+/* Colores de los botones */
 .green {
   background-color: #00a74a;
 }
@@ -127,7 +94,7 @@ body {
   background-color: #094a8f;
 }
 
-/* Mobile scaling */
+/* Estilos de la versión móvil */
 @media screen and (max-width: 500px) {
   .wrap {
     width: 300px;
@@ -137,7 +104,6 @@ body {
   .center {
     width: 150px;
     height: 150px;
-    margin-top: 10px;
   }
 
   .brand {
