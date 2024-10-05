@@ -18,6 +18,7 @@ app.use(bodyParser.json());  // Usar body-parser para procesar JSON
 
 // Configurar el webhook para Telegram con la URL de Vercel
 bot.setWebHook(`https://simon-lyart.vercel.app/webhook`);
+console.log("Webhook configurado en https://simon-lyart.vercel.app/webhook");
 
 // Ruta para recibir las actualizaciones desde Telegram
 app.post('/webhook', (req, res) => {
@@ -31,8 +32,6 @@ app.get('/', (req, res) => {
   console.log('Verificación de la ruta raíz activada');
   res.send('¡Bot de Telegram funcionando en Vercel!');
 });
-
-// Eliminar la parte del puerto para Vercel, ya que no es necesario especificarlo
 
 // Manejador para el comando /start
 bot.onText(/\/start/, (msg) => {

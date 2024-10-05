@@ -20,12 +20,12 @@
     ],
     "routes": [
       {
-        "src": "/",
-        "dest": "/index.html"
-      },
-      {
         "src": "/webhook",
         "dest": "/bot.js"
+      },
+      {
+        "src": "/",
+        "dest": "/index.html"
       }
     ]
   }
