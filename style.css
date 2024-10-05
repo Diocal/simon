@@ -25,46 +25,12 @@ html, body, div, span, applet, object, iframe,
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+ */
-
-  /* Rules below not implemented in browsers yet */
   -o-user-select: none;
   user-select: none;
 }
 
 html {
- background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
-}
-
-.inline {
-  display: inline-block;
-}
-
-.push {
-  position  : relative;
-  width: 200px;
-  height: 200px;
-  background-color: grey;
-  border: 12px solid #333;
-}
-
-.rw {
-  margin-bottom: -4px;
-}
-
-.b-r {
-  border-bottom-right-radius: 100%;
-}
-
-.b-l {
-  border-bottom-left-radius: 100%;
-}
-
-.t-l {
-  border-top-left-radius: 100%;
-}
-
-.t-r {
-  border-top-right-radius: 100%;
+  background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
 }
 
 .wrap {
@@ -77,11 +43,6 @@ html {
   background-color: #333;
   top: 10vh;
   box-shadow: 0px 0px 12px #222;
-}
-
-.wrap-in {
-  position: relative;
-  top: 12px;
 }
 
 .center {
@@ -103,121 +64,18 @@ html {
   margin-top: 35px;
 }
 
-.brand .small {
-  font-size: 0.3em;
-  position: relative;
-  top: -20px;
-}
-
 .count {
   font-family: 'VT323', monospace;
   color: #DC0D29;
-  padding: 0px;
   font-size: 2em;
   width: 50px;
   background-color: #32050C;
-  position: relative;
   border: 4px solid #222;
   border-radius: 10px;
   margin: auto;
 }
 
-.round-btn {
-  width: 20px;
-  height: 20px;
-  position: relative;
-  background-color: yellow;
-  border-radius: 100%;
-  border: 4px solid #444;
-  box-shadow: 0px 2px 3px #222;
-  margin: auto;
-  top: -5px;
-}
-
-.round-btn:active {
-  box-shadow: 0 1px 1px #292929;
-  top: -4px;
-}
-
-.clickable {
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-.unclickable {
-  pointer-events: none;
-}
-
-.led {
-  width: 6px;
-  height: 6px;
-  background-color: #32050C;
-  border-radius: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  border: 2px solid #222;
-  top: -18px;
-}
-
-.led-on {
-  background-color: #DC0D29;
-}
-
-.led-off {
-  color: #430710;
-}
-
-.label {
-  color: #222;
-  font-family: 'Oswald', Arial, sans;
-  font-size: 0.7em;
-  margin-top: 5px;
-  text-align: center;
-}
-
-.display {
-  width: 60px;
-  position: relative;
-  text-align: center;
-}
-
-.btn-box {
-  width: 50px;
-  position: relative;
-}
-
-.sw-slot {
-  height: 20px;
-  width: 40px;
-  background-color: #222;
-  position: relative;
-  top: 5px;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-.switch {
-  height: 16px;
-  width: 16px;
-  border-radius: 4px;
-  background-color: #3193DE;
-  position: relative;
-  border: 2px solid #333;
-}
-
-.sw-on {
-  left: 20px;
-}
-.rw.bot {
-  margin-top: 10px;
-}
-
-.full-red {
-  background-color: #FC0102;
-}
-
+/* Colores */
 .red {
   background-color: #9f0f17;
 }
@@ -234,60 +92,29 @@ html {
   background-color: #094a8f;
 }
 
-.yellow.light {
-  background-color: #fed93f;
-}
-
-.blue.light {
-  background-color: #1c8cff;
-}
-
-.red.light {
-  background-color: #ff4c4c;
-}
-
-.green.light {
-  background-color: #13ff7c;
-}
-
-/* Scaling for Mobile */
+/* Estilos para móviles */
 @media screen and (max-width: 500px) {
   .wrap {
-    top: 50%;
-    transform: translateY(-50%) scale(0.7); /* Centra verticalmente y ajusta escala */
+    width: 90%; /* Asegura que el ancho del juego se ajuste a la pantalla */
+    height: auto;
+    top: 20vh; /* Ajusta la posición para dispositivos más pequeños */
+    transform: scale(0.85); /* Escala ligeramente para pantallas móviles */
     left: 50%;
-    margin-left: -120px; /* Ajusta el margen para centrar horizontalmente */
+    transform: translate(-50%, 0);
   }
 
   .center {
-    width: 150px;
-    height: 150px;
-    top: 50%;
-    left: 50%;
-    margin: -75px 0 0 -75px;
+    width: 180px; /* Ajusta el tamaño central del círculo */
+    height: 180px;
+    margin: -90px 0 0 -90px;
+  }
+
+  .count {
+    font-size: 1.5em;
+    width: 40px;
   }
 
   .brand {
     font-size: 2em;
-    margin-top: 20px;
-  }
-
-  .count {
-    width: 40px;
-    font-size: 1.5em;
-  }
-
-  .round-btn {
-    width: 15px;
-    height: 15px;
-  }
-
-  .sw-slot, .switch {
-    width: 30px;
-    height: 15px;
-  }
-
-  .switch {
-    left: 15px;
   }
 }
