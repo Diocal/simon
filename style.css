@@ -2,18 +2,18 @@
 
 /* Basic Reset */
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed,
+ figure, figcaption, footer, header, hgroup,
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -25,23 +25,45 @@ time, mark, audio, video {
   -webkit-user-select: none; /* Chrome/Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+ */
+
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
   user-select: none;
 }
 
 html {
-  background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
-  height: 100%;
+ background-image: url('https://github.com/Em-Ant/fcc-course/raw/master/front-end_cert/projects/advanced/04-simon-game/images/retina_wood.png');
 }
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
 .inline {
   display: inline-block;
+}
+
+.push {
+  position  : relative;
+  width: 200px;
+  height: 200px;
+  background-color: grey;
+  border: 12px solid #333;
+}
+
+.rw {
+  margin-bottom: -4px;
+}
+
+.b-r {
+  border-bottom-right-radius: 100%;
+}
+
+.b-l {
+  border-bottom-left-radius: 100%;
+}
+
+.t-l {
+  border-top-left-radius: 100%;
+}
+
+.t-r {
+  border-top-right-radius: 100%;
 }
 
 .wrap {
@@ -50,7 +72,9 @@ body {
   border-radius: 100%;
   position: relative;
   text-align: center;
+  margin: auto;
   background-color: #333;
+  top: 10vh;
   box-shadow: 0px 0px 12px #222;
 }
 
@@ -58,7 +82,6 @@ body {
   position: relative;
   top: 12px;
 }
-
 .center {
   width: 220px;
   height: 220px;
@@ -185,15 +208,12 @@ body {
 .sw-on {
   left: 20px;
 }
-
 .rw.bot {
   margin-top: 10px;
 }
-
 .full-red {
   background-color: #FC0102;
 }
-
 .red {
   background-color: #9f0f17;
 }
@@ -229,14 +249,21 @@ body {
 /* Scaling for Mobile */
 @media screen and (max-width: 500px) {
   .wrap {
-    -moz-transform: scale(0.8);
-    -ms-transform: scale(0.8);
-    -o-transform: scale(0.8);
-    -webkit-transform: scale(0.8);
-    transform: scale(0.8);
-    position: relative;
-    left: 0;
-    top: 0;
-    margin: auto;
+    top: 40px;
+
+    -moz-transform: scale(0.6);
+    -ms-transform: scale(0.6);
+    -o-transform: scale(0.6);
+    -webkit-transform: scale(0.6);
+    transform: scale(0.6);
+
+    -o-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    transform-origin: 0 0;
+
+    left: 50%;
+    margin-left: -142px;
   }
 }
