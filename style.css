@@ -53,26 +53,35 @@ html, body {
   background-color: grey;
   border: 12px solid #333;
   margin: 10px;
+  position: absolute;
 }
 
 .green {
   background-color: #00a74a;
   border-top-left-radius: 100%;
+  top: 0;
+  left: 0;
 }
 
 .red {
   background-color: #9f0f17;
   border-top-right-radius: 100%;
+  top: 0;
+  right: 0;
 }
 
 .yellow {
   background-color: #cca707;
   border-bottom-left-radius: 100%;
+  bottom: 0;
+  left: 0;
 }
 
 .blue {
   background-color: #094a8f;
   border-bottom-right-radius: 100%;
+  bottom: 0;
+  right: 0;
 }
 
 .center {
@@ -81,7 +90,7 @@ html, body {
   background-color: #ECE7EE;
   border-radius: 100%;
   border: 12px solid #333;
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
