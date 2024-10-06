@@ -23,8 +23,14 @@ console.log("Webhook configurado en https://simon-lyart.vercel.app/webhook");
 // Ruta para recibir las actualizaciones desde Telegram
 app.post('/webhook', (req, res) => {
   console.log("Webhook activado: ", req.body);  // Log para depuración
-  bot.processUpdate(req.body);  // Procesar la actualización
-  res.sendStatus(200);  // Responder a Telegram que todo fue bien
+  try {
+    bot.processUpdate(req.body);  // Procesar la actualización
+    console.log("Actualización procesada con éxito");  // Log de éxito
+    res.sendStatus(200);  // Responder a Telegram que todo fue bien
+  } catch (error) {
+    console.error("Error procesando la actualización: ", error);  // Log de error
+    res.sendStatus(500);  // Enviar respuesta 500 en caso de error
+  }
 });
 
 // Ruta raíz para verificar que el bot esté funcionando
@@ -38,9 +44,14 @@ bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
   console.log("/start recibido de:", chatId);  // Log para depuración
   
-  // Enviar el enlace al juego Simon hospedado en Vercel como un link clicable
-  const gameUrl = 'https://simon-lyart.vercel.app/';
-  bot.sendMessage(chatId, `¡Bienvenido al juego de Simon! Haz clic en el enlace para jugar:\n\n[🎮 Juega aquí](https://simon-lyart.vercel.app/)`, { parse_mode: 'Markdown' });
+  try {
+    // Enviar el enlace al juego Simon hospedado en Vercel como un link clicable
+    const gameUrl = 'https://simon-lyart.vercel.app/';
+    bot.sendMessage(chatId, `¡Bienvenido al juego de Simon! Haz clic en el enlace para jugar:\n\n[🎮 Juega aquí](https://simon-lyart.vercel.app/)`, { parse_mode: 'Markdown' });
+    console.log(`Mensaje enviado correctamente al chatId: ${chatId}`);
+  } catch (error) {
+    console.error("Error enviando el mensaje /start: ", error);
+  }
 });
 
 // Manejador general para todos los mensajes, para depurar
